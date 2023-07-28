@@ -1,0 +1,100 @@
+{
+    "cookies": [
+        {
+            "id": 1,
+            "reference": "C001",
+            "name": "Laka Óreo Branco",
+            "description": "Massa tradicional branca com gotas nobres  de chocolate branco, recheio e cobertura de Laka Oreo Branco",
+            "price": 25.00,
+            "image_url": "https://github.com/edtech1985/pumpCrazyCookies/blob/main/img/lakaoreobranco.jpeg?raw=true"
+        },
+        {
+            "id": 2,
+            "reference": "C002",
+            "name": "Laka Óreo Preto",
+            "description": "Massa tradicional branca, com gotas nobres de chocolate ao leite, recheio e cobertura de Laka Oreo Preto",
+            "price": 25.00,
+            "image_url": "https://github.com/edtech1985/pumpCrazyCookies/blob/main/img/lakaoreopreto.jpeg?raw=true"
+        },
+        {
+            "id": 3,
+            "reference": "C003",
+            "name": "Stikadinho",
+            "description": "Massa tradicional branca , com gotas de chocolate ao leite, recheio e cobertura de Stikadinho",
+            "price": 25.00,
+            "image_url": "https://github.com/edtech1985/pumpCrazyCookies/blob/main/img/stikadinho.jpg?raw=true"
+        },
+        {
+            "id": 4,
+            "reference": "C004",
+            "name": "Ouro Branco",
+            "description": "Massa tradicional branca com gotas nobres de chocolate branco, recheio e cobertura de Ouro Branco",
+            "price": 25.00,
+            "image_url": "https://github.com/edtech1985/pumpCrazyCookies/blob/main/img/ourobranco.jpg?raw=true"
+        },
+        {
+            "id": 5,
+            "reference": "C005",
+            "name": "KitKat",
+            "description": "Massa tradicional branca com gotas de chocolate ao leite , recheio e cobertura de KitKat",
+            "price": 25.00,
+            "image_url": "https://github.com/edtech1985/pumpCrazyCookies/blob/main/img/kitkat.jpeg?raw=true"
+        },
+        {
+            "id": 6,
+            "reference": "C006",
+            "name": "Red Velvet",
+            "description": "Red Velvet - Ninho com frutas vermelhas",
+            "price": 25.00,
+            "image_url": "https://github.com/edtech1985/pumpCrazyCookies/blob/main/img/redvelvet.jpeg?raw=true"
+        },
+        {
+            "id": 7,
+            "reference": "C007",
+            "name": "Frutas do Bosque",
+            "description": "Massa roxa com gotas de chocolate branco, recheio de Ninho com geleia importada de Frutas do Bosque",
+            "price": 25.00,
+            "image_url": "https://github.com/edtech1985/pumpCrazyCookies/blob/main/img/frutasdobosque.jpg?raw=true"
+        },
+        {
+            "id": 8,
+            "reference": "C008",
+            "name": "Ninho com Nutella",
+            "description": "Massa dark com 100% cacau em pó, gotas de chocolate branco, recheio de Ninho com Nutella",
+            "price": 25.00,
+            "image_url": "https://github.com/edtech1985/pumpCrazyCookies/blob/main/img/nutella.jpg?raw=true"
+        },
+        {
+            "id": 9,
+            "reference": "C009",
+            "name": "Chocolate Branco com Nozes",
+            "description": "Massa tradicional branca, com gotas nobres de chocolate branco, recheio e cobertura de chocolate branco com nozes",
+            "price": 25.00,
+            "image_url": "https://github.com/edtech1985/pumpCrazyCookies/blob/main/img/branconozes.jpg?raw=true"
+        },
+        {
+            "id": 10,
+            "reference": "C010",
+            "name": "Kinder Bueno",
+            "description": "Cookie com recheio irresistível de Kinder Bueno",
+            "price": 25.00,
+            "image_url": "https://github.com/edtech1985/pumpCrazyCookies/blob/main/img/kinderbueno.jpg?raw=true"
+        },
+        {
+            "id": 11,
+            "reference": "C011",
+            "name": "Chocolate ao Leite com Nozes",
+            "description": "Cookie com chocolate ao leite e pedaços de nozes",
+            "price": 25.00,
+            "image_url": "https://github.com/edtech1985/pumpCrazyCookies/blob/main/img/pretonozes.jpg?raw=true"
+        },
+        {
+            "id": 12,
+            "reference": "C012",
+            "name": "Alpino",
+            "description": "Massa tradicional branca, com gotas nobres de chocolate ao leite, recheio e cobertura de chocolate Alpino",
+            "price": 25.00,
+            "image_url": "https://github.com/edtech1985/pumpCrazyCookies/blob/main/img/alpino.jpg?raw=true"
+        }
+    ]
+}

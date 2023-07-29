@@ -81,14 +81,6 @@
             "image_url": "https://github.com/edtech1985/pumpCrazyCookies/blob/main/img/kinderbueno.jpg?raw=true"
         },
         {
-            "id": 11,
-            "reference": "C011",
-            "name": "Chocolate ao Leite com Nozes",
-            "description": "Cookie com chocolate ao leite e pedaços de nozes",
-            "price": 25.00,
-            "image_url": "https://github.com/edtech1985/pumpCrazyCookies/blob/main/img/pretonozes.jpg?raw=true"
-        },
-        {
             "id": 12,
             "reference": "C012",
             "name": "Alpino",

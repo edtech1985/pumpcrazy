@@ -16,6 +16,7 @@ function Footer() {
             href="https://www.instagram.com/pumpcrazycookies/"
             target="_blank"
             rel="noreferrer"
+            alt="Instagram Pump Crazy Cookies"
           >
             <FaInstagram />
           </a>
@@ -26,6 +27,7 @@ function Footer() {
             href="https://api.whatsapp.com/message/FZ6EZZKFV4PTI1?autoload=1&app_absent=0"
             target="_blank"
             rel="noreferrer"
+            alt="WhatsApp Pump Crazy Cookies"
           >
             <FaWhatsapp />
           </a>
@@ -37,9 +39,10 @@ function Footer() {
       <StyledDevelopedBy>
         Developed by{" "}
         <a
-          href="https://www.linkedin.com/in/edtech1985/"
+          href="https://edtech1985.com.br/"
           target="_blank"
           rel="noreferrer"
+          alt="Desenvolvedor Web edtech1985"
         >
           <span>edtech1985</span>
         </a>

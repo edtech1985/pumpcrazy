@@ -11,6 +11,7 @@ function Home() {
   return (
     <StyledContainer>
       <StyledBackground />
+
       <StyledContent>
         <StyledH1>
           Bem-vindo à <br></br>

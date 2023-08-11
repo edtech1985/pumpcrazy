@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <!-- Página Inicial -->
+    <url>
+        <loc>https://www.pumpcrazy.com.br/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- Página de Checkout -->
+    <url>
+        <loc>https://www.pumpcrazy.com.br/checkout</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Página de Política de Cookies -->
+    <url>
+        <loc>https://www.pumpcrazy.com.br/cookies</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+</urlset>

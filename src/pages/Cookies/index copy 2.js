@@ -109,12 +109,7 @@ export default function App() {
                 <CardRef>{`Ref: ${product.reference}`}</CardRef>
               </CardInfo>
               <CardCartButton>
-                <FaShoppingCart
-                  onClick={(event) => {
-                    event.stopPropagation();
-                    addToCart(product);
-                  }}
-                />
+                <FaShoppingCart onClick={() => addToCart(product)} />
               </CardCartButton>
             </Card>
           </Item>

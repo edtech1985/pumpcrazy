@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useState, useEffect } from "react";
 import {
   CheckoutButton,
   CheckoutContainer,
@@ -7,23 +7,41 @@ import {
   CheckoutSummaryValue,
   CheckoutTable,
   CheckoutTableData,
-  CheckoutTableDataActions,
   CheckoutTableDataName,
   CheckoutTableDataPrice,
   CheckoutTableDataQuantity,
   CheckoutTableHead,
   CheckoutTableRow,
-  DivButton,
   MinusButton,
   PlusButton,
   QuantityButtons,
-  TrashIcon,
+  RemoveButton,
 } from "./Checkout";
-import { CartContext } from "../../components/CartContext";
 
 function Checkout() {
-  const { cartItems, updateCartItemQuantity, removeFromCart } =
-    useContext(CartContext);
+  const [cartItems, setCartItems] = useState([]);
+
+  useEffect(() => {
+    const storedCartItems = JSON.parse(localStorage.getItem("CartItems")) || [];
+    setCartItems(storedCartItems);
+  }, []);
+
+  const removeItem = (itemId) => {
+    const updatedItems = cartItems.filter((item) => item.id !== itemId);
+    setCartItems(updatedItems);
+    localStorage.setItem("CartItems", JSON.stringify(updatedItems));
+  };
+
+  const updateItemQuantity = (itemId, newQuantity) => {
+    const updatedItems = cartItems.map((item) => {
+      if (item.id === itemId) {
+        return { ...item, quantity: newQuantity };
+      }
+      return item;
+    });
+    setCartItems(updatedItems);
+    localStorage.setItem("CartItems", JSON.stringify(updatedItems));
+  };
 
   const getTotalPrice = () => {
     return cartItems.reduce(
@@ -54,7 +72,7 @@ function Checkout() {
                   <QuantityButtons>
                     <MinusButton
                       onClick={() =>
-                        updateCartItemQuantity(item.id, item.quantity - 1)
+                        updateItemQuantity(item.id, item.quantity - 1)
                       }
                       disabled={item.quantity === 1}
                     >
@@ -65,7 +83,7 @@ function Checkout() {
                     </CheckoutTableDataQuantity>
                     <PlusButton
                       onClick={() =>
-                        updateCartItemQuantity(item.id, item.quantity + 1)
+                        updateItemQuantity(item.id, item.quantity + 1)
                       }
                     >
                       +
@@ -75,9 +93,11 @@ function Checkout() {
                 <CheckoutTableData>{`R$ ${(item.price * item.quantity).toFixed(
                   2
                 )}`}</CheckoutTableData>
-                <CheckoutTableDataActions>
-                  <TrashIcon onClick={() => removeFromCart(item.id)} />
-                </CheckoutTableDataActions>
+                <CheckoutTableData>
+                  <RemoveButton onClick={() => removeItem(item.id)}>
+                    Remove
+                  </RemoveButton>
+                </CheckoutTableData>
               </CheckoutTableRow>
             ))}
           </tbody>
@@ -88,19 +108,17 @@ function Checkout() {
             2
           )}`}</CheckoutSummaryValue>
         </CheckoutSummary>
-        <DivButton>
-          <a
-            href={`https://wa.me/5551993358455?text=${encodeURIComponent(
-              `Olá, Pump Crazy Cookies! Escolhi os seguintes itens: ${cartItems
-                .map((item) => `${item.quantity} ${item.name}`)
-                .join(", ")}, total R$ ${getTotalPrice().toFixed(2)}`
-            )}. Qual o valor da entrega para meu endereço?`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <CheckoutButton>Checkout</CheckoutButton>
-          </a>
-        </DivButton>
+        <a
+          href={`https://wa.me/5551993358455?text=${encodeURIComponent(
+            `Olá, Pump Crazy Cookies! Escolhi os seguintes itens: ${cartItems
+              .map((item) => `${item.quantity} ${item.name}`)
+              .join(", ")}, total R$ ${getTotalPrice().toFixed(2)}`
+          )}. Qual o valor da entrega para meu endereço?`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <CheckoutButton>Checkout</CheckoutButton>
+        </a>
       </CheckoutContainer>
     </>
   );

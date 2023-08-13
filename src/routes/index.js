@@ -6,6 +6,7 @@ import Checkout from "../pages/Checkout";
 import { Main } from "./Routes";
 import { CartProvider } from "../components/CartContext";
 import Cookies from "../pages/Cookies";
+import { Cardapio } from "../pages/Cardapio";
 
 export default function AppRouter() {
   return (
@@ -17,6 +18,7 @@ export default function AppRouter() {
             <Route path="/" element={<Home />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/cookies" element={<Cookies />} />
+            <Route path="/cardapio" element={<Cardapio />} />
           </Routes>
           <Footer />
         </CartProvider>

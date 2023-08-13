@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 
 import { FaShoppingCart } from "react-icons/fa";
@@ -12,16 +12,10 @@ import {
   StyledCartCount,
 } from "./Header";
 import logo from "../../img/newlogo (2).jpeg";
+import { CartContext } from "../CartContext";
 
 function Header() {
-  const [cartItems, setCartItems] = useState([]);
-
-  useEffect(() => {
-    const items = JSON.parse(localStorage.getItem("CartItems"));
-    if (items) {
-      setCartItems(items);
-    }
-  }, []);
+  const { cartCount } = useContext(CartContext);
 
   return (
     <StyledHeader>
@@ -35,7 +29,7 @@ function Header() {
         <Link to="/checkout">
           <StyledCartIcon>
             <FaShoppingCart />
-            <StyledCartCount>{cartItems.length}</StyledCartCount>
+            <StyledCartCount>{cartCount}</StyledCartCount>
           </StyledCartIcon>
         </Link>
       </StyledCartDiv>

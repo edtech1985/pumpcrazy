@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import {
   useTransition,
   useSpring,
@@ -24,15 +24,13 @@ import {
 import cookies from "../../db/cookiesdb.json";
 import { FaShoppingCart } from "react-icons/fa";
 
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { CartContext } from "../../components/CartContext/index.js";
 
 export default function App() {
   const [open, setOpen] = useState(false);
   const [showTextOverlay, setShowTextOverlay] = useState(true);
   const [selectedCookie, setSelectedCookie] = useState(null);
-
-  const { addToCart } = useContext(CartContext);
 
   const springApi = useSpringRef();
   const { size, ...rest } = useSpring({
@@ -81,6 +79,30 @@ export default function App() {
     setSelectedCookie(item); // Definir o cookie selecionado
   };
 
+  const [cartItems, setCartItems] = useState([]);
+
+  const handleAddToCart = (event, item) => {
+    event.stopPropagation();
+    const existingItem = cartItems.find((i) => i.id === item.id);
+    toast.success("Item adicionado ao carrinho");
+    if (existingItem) {
+      // Update quantity
+      const updatedCartItems = cartItems.map((i) =>
+        i.id === item.id ? { ...i, quantity: i.quantity + 1 } : i
+      );
+      setCartItems(updatedCartItems);
+      localStorage.setItem("CartItems", JSON.stringify(updatedCartItems));
+    } else {
+      // Add new item with quantity 1
+      const newItem = { ...item, quantity: 1 };
+      setCartItems([...cartItems, newItem]);
+      localStorage.setItem(
+        "CartItems",
+        JSON.stringify([...cartItems, newItem])
+      );
+    }
+  };
+
   return (
     <Wrapper>
       <Container
@@ -95,20 +117,20 @@ export default function App() {
         className={open ? "textBackground" : ""}
         onClick={handleContainerClick}
       >
-        {transition((style, product) => (
+        {transition((style, item) => (
           <Item
-            key={product.id}
+            key={item.id}
             style={{ ...style }}
-            onClick={(event) => handleCardClick(event, product)}
+            onClick={(event) => handleCardClick(event, item)}
           >
             <Card>
-              <CardImage src={product.image_url} alt={product.name} />
+              <CardImage src={item.image_url} alt={item.name} />
               <CardInfo>
-                <CardTitle>{product.name}</CardTitle>
-                <CardPrice>{`R$ ${product.price.toFixed(2)}`}</CardPrice>
-                <CardRef>{`Ref: ${product.reference}`}</CardRef>
+                <CardTitle>{item.name}</CardTitle>
+                <CardPrice>{`R$ ${item.price.toFixed(2)}`}</CardPrice>
+                <CardRef>{`Ref: ${item.reference}`}</CardRef>
               </CardInfo>
-              <CardCartButton onClick={() => addToCart(product)}>
+              <CardCartButton onClick={(event) => handleAddToCart(event, item)}>
                 <FaShoppingCart />
               </CardCartButton>
             </Card>

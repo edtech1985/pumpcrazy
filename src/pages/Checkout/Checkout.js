@@ -1,3 +1,4 @@
+import { FaTrash } from "react-icons/fa";
 import styled from "styled-components";
 
 export const CheckoutContainer = styled.div`
@@ -38,6 +39,28 @@ export const CheckoutTableData = styled.td`
     font-size: 12px;
     width: 10px;
     max-width: 10px;
+  }
+`;
+
+export const CheckoutTableDataActions = styled(CheckoutTableData)`
+  width: 5vw;
+  text-align: center;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 0.5rem;
+    width: 5px;
+  }
+`;
+
+export const TrashIcon = styled(FaTrash)`
+  cursor: pointer;
+  color: darkred;
+  font-size: 1.25rem;
+  padding: 0;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 1rem;
+    padding: 0;
   }
 `;
 

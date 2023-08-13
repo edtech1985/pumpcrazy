@@ -1,6 +1,7 @@
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import {
   StyledDevelopedBy,
+  StyledDiv,
   StyledFooter,
   StyledIconItem,
   StyledIconList,
@@ -33,16 +34,22 @@ function Footer() {
           </a>
         </StyledIconItem>
       </StyledIconList>
-      <StyledRightsReserved>
-        © 2023 Direitos Reservados | <span>Pump Crazy Cookies</span>
-      </StyledRightsReserved>
+      <StyledDiv>
+        <StyledRightsReserved>
+          Horário de Atendimento: Seg. a Sáb. das 10h às 18h
+        </StyledRightsReserved>
+        <StyledRightsReserved>
+          © 2023 Direitos Reservados | <span>Pump Crazy Cookies</span>
+        </StyledRightsReserved>
+      </StyledDiv>
       <StyledDevelopedBy>
         Developed by{" "}
         <a
-          href="https://edtech1985.com.br/"
+          href="https://www.edtech1985.com.br/"
           target="_blank"
           rel="noreferrer"
           alt="Desenvolvedor Web edtech1985"
+          aria-label="Criação de Websites edtech1985"
         >
           <span>edtech1985</span>
         </a>

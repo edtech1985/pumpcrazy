@@ -46,7 +46,14 @@ export const StyledIconItem = styled.li`
   }
 `;
 
+export const StyledDiv = styled.div`
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+`;
+
 export const StyledRightsReserved = styled.p`
+  text-align: center;
   font-size: 1.25vw;
   margin-bottom: 0.5vw;
   cursor: pointer;

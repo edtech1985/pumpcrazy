@@ -18,7 +18,6 @@ import {
   ModalTitle,
   ModalText,
   CartIcon,
-  StyledTHead,
 } from "./Cardapio";
 
 export default function Cardapio() {
@@ -51,7 +50,7 @@ export default function Cardapio() {
       <SearchInputContainer>
         <SearchInput
           type="text"
-          placeholder="Pesquisar cookies..."
+          placeholder="Pesquisar produto"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
@@ -59,13 +58,13 @@ export default function Cardapio() {
       </SearchInputContainer>
 
       <Table>
-        <StyledTHead>
+        <thead>
           <tr>
             <TableHeader>Nome</TableHeader>
             <TableHeader>Preço</TableHeader>
             <TableHeader>Add</TableHeader>
           </tr>
-        </StyledTHead>
+        </thead>
         <tbody>
           {filteredProducts.map((product) => (
             <TableRow key={product.id}>

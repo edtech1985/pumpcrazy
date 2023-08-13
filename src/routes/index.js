@@ -6,7 +6,7 @@ import Checkout from "../pages/Checkout";
 import { Main } from "./Routes";
 import { CartProvider } from "../components/CartContext";
 import Cookies from "../pages/Cookies";
-import { Cardapio } from "../pages/Cardapio";
+import Cardapio from "../pages/Cardapio";
 
 export default function AppRouter() {
   return (

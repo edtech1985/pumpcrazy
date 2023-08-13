@@ -13,8 +13,8 @@ export const StyledFooter = styled.footer`
   height: 10vh;
 
   @media only screen and (max-width: 600px) {
-    padding-top: 35px;
-    padding-bottom: 35px;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     justify-content: center;
     flex-direction: column;
     height: auto; /* Remover a altura fixa para acomodar os textos em linhas separadas */
@@ -30,7 +30,7 @@ export const StyledIconList = styled.ul`
 export const StyledIconItem = styled.li`
   margin-left: 1vw;
   list-style-type: none;
-  font-size: 2vw;
+  font-size: 2rem;
   cursor: pointer;
   &:hover {
     color: var(--light-beige);
@@ -41,7 +41,7 @@ export const StyledIconItem = styled.li`
   }
 
   @media only screen and (max-width: 600px) {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
   }
 `;
 
@@ -53,7 +53,7 @@ export const StyledDiv = styled.div`
 
 export const StyledRightsReserved = styled.p`
   text-align: center;
-  font-size: 1.25vw;
+  font-size: 1.5vw;
   margin-bottom: 0.5vw;
   cursor: pointer;
   span {
@@ -64,14 +64,14 @@ export const StyledRightsReserved = styled.p`
   }
 
   @media only screen and (max-width: 600px) {
-    font-size: 0.75rem;
-    margin-bottom: 5px;
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
   }
 `;
 
 export const StyledDevelopedBy = styled.p`
-  margin-right: 1vw;
-  font-size: 1.25vw;
+  margin-right: 1rem;
+  font-size: 1rem;
   cursor: pointer;
   a {
     text-decoration: none;
@@ -84,6 +84,6 @@ export const StyledDevelopedBy = styled.p`
   }
 
   @media only screen and (max-width: 600px) {
-    font-size: 0.5rem;
+    font-size: 0.75rem;
   }
 `;

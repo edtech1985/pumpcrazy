@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { FaShoppingCart } from "react-icons/fa";
 import {
@@ -21,18 +21,10 @@ function Header() {
     <StyledHeader>
       <StyledLogo src={logo} alt="Logo da loja" />
       <StyledNavbar>
-        <StyledNavItem as={NavLink} to="/">
-          Home
-        </StyledNavItem>
-        <StyledNavItem as={NavLink} to="/cookies">
-          Cookies
-        </StyledNavItem>
-        <StyledNavItem as={NavLink} to="/cardapio">
-          Cardápio
-        </StyledNavItem>
-        <StyledNavItem as={NavLink} to="/checkout">
-          Checkout
-        </StyledNavItem>
+        <StyledNavItem href="/">Home</StyledNavItem>
+        <StyledNavItem href="/cookies">Cookies</StyledNavItem>
+        <StyledNavItem href="/cardapio">Cardápio</StyledNavItem>
+        <StyledNavItem href="/checkout">Checkout</StyledNavItem>
       </StyledNavbar>
       <StyledCartDiv>
         <Link to="/checkout">

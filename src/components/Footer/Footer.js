@@ -11,7 +11,7 @@ export const StyledFooter = styled.footer`
   max-width: 100vw;
   box-sizing: border-box;
   max-height: 8vh;
-  height: 8vh;
+  height: 10vh;
 
   @media only screen and (max-width: 600px) {
     padding-top: 35px;

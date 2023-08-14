@@ -30,9 +30,6 @@ function Header() {
         <StyledNavItem as={NavLink} to="/cardapio">
           Cardápio
         </StyledNavItem>
-        <StyledNavItem as={NavLink} to="/checkout">
-          Checkout
-        </StyledNavItem>
       </StyledNavbar>
       <StyledCartDiv>
         <Link to="/checkout">

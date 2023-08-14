@@ -76,6 +76,10 @@ export const CardInfo = styled.div`
     background-color: var(--dark-brown);
     // color: var(--dark-brown);
   }
+
+  @media only screen and (max-width: 600px) {
+    padding: 2vw;
+  }
 `;
 
 export const CardTitle = styled.h3`
@@ -119,7 +123,10 @@ export const CardCartButton = styled.div`
   }
 
   @media only screen and (max-width: 600px) {
-    font-size: 0.5rem;
+    font-size: 1rem;
+    padding: 0.2rem;
+    padding-top: 0.25rem;
+    margin: 0.25rem;
   }
 `;
 

@@ -24,7 +24,7 @@ export const CartProvider = ({ children }) => {
 
   const addToCart = (product) => {
     const existingItem = cartItems.find((item) => item.id === product.id);
-    toast.success("Item adicionado ao carrinho");
+    toast.success("🍪 Item adicionado ao carrinho 🍪");
     if (existingItem) {
       // Update quantity
       const updateCartItemQuantity = cartItems.map((item) =>

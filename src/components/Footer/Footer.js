@@ -56,6 +56,9 @@ export const StyledRightsReserved = styled.p`
   font-size: 1.5vw;
   margin-bottom: 0.5vw;
   cursor: pointer;
+  a {
+    text-decoration: none;
+  }
   span {
     color: var(--light-beige);
     &:hover {

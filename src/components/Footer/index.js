@@ -39,7 +39,15 @@ function Footer() {
           Horário de Atendimento: Seg. a Sáb. das 10h às 18h
         </StyledRightsReserved>
         <StyledRightsReserved>
-          © 2023 Direitos Reservados | <span>Pump Crazy Cookies</span>
+          © 2023 Direitos Reservados |{" "}
+          <a
+            href="http://www.pumpcrazy.com.br"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Ir para o Pump Crazy Cookies"
+          >
+            <span>Pump Crazy Cookies</span>
+          </a>
         </StyledRightsReserved>
       </StyledDiv>
       <StyledDevelopedBy>

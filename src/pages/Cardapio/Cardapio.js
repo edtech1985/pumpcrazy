@@ -148,6 +148,6 @@ export const CartIcon = styled(FaShoppingCart)`
   padding-left: 1rem;
 
   &:hover {
-    color: green;
+    color: var(--green);
   }
 `;

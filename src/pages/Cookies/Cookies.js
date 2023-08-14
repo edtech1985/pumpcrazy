@@ -28,6 +28,7 @@ export const Container = styled(animated.div)`
     grid-template-columns: repeat(3, minmax(30vw, 1fr));
     grid-template-rows: repeat(4, minmax(0.5rem, 1fr));
     margin-top: 25px;
+    margin-left: 0.5rem;
   }
 `;
 

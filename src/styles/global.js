@@ -26,6 +26,17 @@ body {
   --dark-beige: #D9B384;
   --light-beige: #F2DCB3;
   --salmon: #F0D9CA;
+
+  --primary: #275EFE;
+  --primary-light: #7699FF;
+  --dark: #1C212E;
+  --grey-dark: #3F4656;
+  --grey: #6C7486;
+  --grey-light: #CDD9ED;
+  --white: #FFF;
+  --green: #16BF78;
+  --sand: #DCB773;
+  --sand-light: #EDD9A9;
 }
 
 `;

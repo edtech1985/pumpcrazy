@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import {
+  CheckoutButton,
   CheckoutContainer,
   CheckoutSummary,
   CheckoutSummaryText,
@@ -19,7 +20,6 @@ import {
   TrashIcon,
 } from "./Checkout";
 import { CartContext } from "../../components/CartContext";
-import AnimatedButton from "../../components/AnimatedButton/AnimatedButton";
 
 function Checkout() {
   const { cartItems, updateCartItemQuantity, removeFromCart } =
@@ -89,7 +89,7 @@ function Checkout() {
           )}`}</CheckoutSummaryValue>
         </CheckoutSummary>
         <DivButton>
-          {/* <a
+          <a
             href={`https://wa.me/5551993358455?text=${encodeURIComponent(
               `Olá, Pump Crazy Cookies! Escolhi os seguintes itens: ${cartItems
                 .map((item) => `${item.quantity} ${item.name}`)
@@ -97,9 +97,9 @@ function Checkout() {
             )}. Qual o valor da entrega para meu endereço?`}
             target="_blank"
             rel="noopener noreferrer"
-          > */}
-          <AnimatedButton />
-          {/* </a> */}
+          >
+            <CheckoutButton>Checkout</CheckoutButton>
+          </a>
         </DivButton>
       </CheckoutContainer>
     </>

@@ -34,8 +34,13 @@ export const StyledBackground = styled.div`
 export const StyledContent = styled.div`
   position: relative;
   z-index: 1;
+  height: 100%;
 
   @media only screen and (max-width: 600px) {
+    height: auto;
+  }
+
+  @media only screen and (min-width: 601px) and (max-width: 992px) {
     height: auto;
   }
 `;
@@ -51,6 +56,10 @@ export const StyledH1 = styled.h1`
     margin-top: 0;
     margin-bottom: 0.5vw;
     width: 100%;
+  }
+
+  @media only screen and (min-width: 601px) and (max-width: 992px) {
+    font-size: 2rem;
   }
 `;
 
@@ -75,5 +84,9 @@ export const StyledP = styled.p`
 
   @media only screen and (max-width: 600px) {
     font-size: 0.75rem;
+  }
+
+  @media only screen and (min-width: 601px) and (max-width: 992px) {
+    font-size: 1.25rem;
   }
 `;

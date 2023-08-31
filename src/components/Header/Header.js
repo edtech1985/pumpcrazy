@@ -40,6 +40,11 @@ export const StyledNavItem = styled.a`
   @media only screen and (max-width: 600px) {
     font-size: 1rem;
   }
+
+  @media only screen and (min-width: 601px) and (max-width: 992px) {
+    font-size: 2rem;
+    padding: 2vw;
+  }
 `;
 
 export const StyledCartDiv = styled.div`
@@ -78,6 +83,13 @@ export const StyledCartIcon = styled.div`
   @media only screen and (max-width: 600px) {
     font-size: 1rem;
   }
+
+  @media only screen and (min-width: 601px) and (max-width: 992px) {
+    margin-right: 0.75vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    font-size: 4vw;
+  }
 `;
 
 export const StyledCartCount = styled.div`
@@ -91,5 +103,9 @@ export const StyledCartCount = styled.div`
 
   @media only screen and (max-width: 600px) {
     font-size: 1rem;
+  }
+
+  @media only screen and (min-width: 601px) and (max-width: 992px) {
+    font-size: 2vw;
   }
 `;

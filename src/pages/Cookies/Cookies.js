@@ -3,14 +3,22 @@ import { animated } from "@react-spring/web";
 
 export const Wrapper = styled.div`
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   background: var(--light-beige); // pagina inicial
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
 
   @media only screen and (max-width: 600px) {
     height: 77vh;
+    padding-top: 0rem;
+  }
+
+  @media only screen and (min-width: 601px) and (max-width: 992px) {
+    padding-top: 0rem;
   }
 `;
 
@@ -23,12 +31,19 @@ export const Container = styled(animated.div)`
   cursor: pointer;
   box-shadow: 0px 15px 10px -5px rgba(64, 41, 21, 0.8);
   will-change: width, height;
+  align-items: center;
+  justify-content: space-around;
 
   @media only screen and (max-width: 600px) {
     grid-template-columns: repeat(3, minmax(30vw, 1fr));
     grid-template-rows: repeat(4, minmax(0.5rem, 1fr));
-    margin-top: 25px;
-    margin-left: 0.5rem;
+    padding: 0 1rem;
+    margin: 0;
+  }
+
+  @media only screen and (min-width: 601px) and (max-width: 992px) {
+    padding: 1vw;
+    padding: 1vw;
   }
 `;
 
@@ -46,6 +61,14 @@ export const Item = styled(animated.div)`
     background: var(--light-beige);
     will-change: transform, opacity;
   }
+
+  @media only screen and (min-width: 601px) and (max-width: 992px) {
+    width: ${(props) => (props.open ? "100vw" : "23vw")};
+    height: ${(props) => (props.open ? "100vh" : "75%")};
+    border-radius: 1.5vw;
+    background: var(--light-beige);
+    will-change: transform, opacity;
+  }
 `;
 
 export const Card = styled.div`
@@ -53,9 +76,15 @@ export const Card = styled.div`
   overflow: hidden;
   cursor: pointer;
   border-radius: 1.5vw;
+
   transition: transform 0.2s ease-out;
+
   &:hover {
     transform: scale(1.05);
+  }
+
+  @media only screen and (min-width: 601px) and (max-width: 992px) {
+    height: 100%;
   }
 `;
 
@@ -110,8 +139,8 @@ export const CardCartButton = styled.div`
   position: absolute;
   bottom: 0;
   right: 0;
-  padding: 0.5vw;
-  margin: 0.5vw;
+  padding: 0.75vw;
+  margin: 0.75vw;
   background-color: var(--light-brown);
   border-radius: 50%;
   color: #fff;

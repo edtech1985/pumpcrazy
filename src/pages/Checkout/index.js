@@ -17,6 +17,7 @@ import {
   MinusButton,
   PlusButton,
   QuantityButtons,
+  StyledBackground,
   TrashIcon,
 } from "./Checkout";
 import { CartContext } from "../../components/CartContext";
@@ -61,7 +62,7 @@ function Checkout() {
   return (
     <>
       <CheckoutContainer>
-        {/* Exibindo a taxa de entrega com base na cidade selecionada */}
+        <StyledBackground />
         <DivCitySelector>
           Selecione sua cidade:
           <select

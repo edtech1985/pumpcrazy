@@ -1,6 +1,8 @@
 import { FaTrash } from "react-icons/fa";
 import styled from "styled-components";
 
+import backgroundImage from "./backgroundImage";
+
 export const CheckoutContainer = styled.div`
   max-width: 100vw;
   margin: 0 auto;
@@ -11,6 +13,20 @@ export const CheckoutContainer = styled.div`
     height: 76vh;
     max-width: 100vw;
   }
+`;
+
+export const StyledBackground = styled.div`
+  background-image: url(${backgroundImage});
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  opacity: 0.25;
+  z-index: -10;
 `;
 
 export const DivCitySelector = styled.table`
@@ -33,7 +49,9 @@ export const DivCitySelector = styled.table`
 export const CheckoutTable = styled.table`
   width: 100%;
   border-collapse: collapse;
+  border-radius: 15px;
   margin-top: 20px;
+  background-color: rgba(245, 245, 220, 0.75);
 
   @media only screen and (max-width: 768px) {
     margin-top: 5px;

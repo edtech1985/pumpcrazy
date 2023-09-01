@@ -1,11 +1,5 @@
 import React, { useEffect } from "react";
-import {
-  StyledContainer,
-  StyledBackground,
-  StyledContent,
-  StyledH1,
-  StyledP,
-} from "./Home";
+import { StyledContainer, StyledContent, StyledH1, StyledP } from "./Home";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -17,8 +11,6 @@ function Home() {
 
   return (
     <StyledContainer>
-      <StyledBackground />
-
       <div className="animation" data-aos="fade-up">
         <StyledContent>
           <StyledH1>

@@ -2,18 +2,15 @@ import styled from "styled-components";
 import { animated } from "@react-spring/web";
 
 export const Wrapper = styled.div`
-  width: 100vw;
-  height: 100%;
-  background: var(--light-beige); // pagina inicial
+  width: 100%;
+  height: auto;
   display: flex;
   align-items: center;
-  justify-content: center;
-  overflow: hidden;
+  justify-content: space-around;
   padding-top: 1rem;
   padding-bottom: 2rem;
 
   @media only screen and (max-width: 600px) {
-    height: 77vh;
     padding-top: 0rem;
   }
 
@@ -25,70 +22,52 @@ export const Wrapper = styled.div`
 export const Container = styled(animated.div)`
   position: relative;
   display: grid;
-  grid-template-columns: repeat(4, minmax(20vw, 1fr));
-  grid-gap: 1vw;
-  padding: 1vw;
+  grid-template-columns: repeat(4, minmax(20%, 1fr));
+  grid-gap: 1rem;
+  padding: 1rem;
+  padding-right: 2rem;
   cursor: pointer;
-  box-shadow: 0px 15px 10px -5px rgba(64, 41, 21, 0.8);
-  will-change: width, height;
   align-items: center;
   justify-content: space-around;
 
-  @media only screen and (max-width: 600px) {
-    grid-template-columns: repeat(3, minmax(30vw, 1fr));
-    grid-template-rows: repeat(4, minmax(0.5rem, 1fr));
-    padding: 0 1rem;
-    margin: 0;
+  margin-right: 1rem;
+
+  @media only screen and (max-width: 480px) {
+    grid-template-columns: repeat(1, minmax(100%, 1fr));
+  }
+
+  @media only screen and (min-width: 481px) and (max-width: 600px) {
+    grid-template-columns: repeat(2, minmax(40%, 1fr));
   }
 
   @media only screen and (min-width: 601px) and (max-width: 992px) {
-    padding: 1vw;
-    padding: 1vw;
+    grid-template-columns: repeat(3, minmax(33%, 1fr));
+
+    margin-right: 1rem;
+    margin-left: 1rem;
   }
 `;
 
 export const Item = styled(animated.div)`
-  width: ${(props) => (props.open ? "100vw" : "23vw")};
-  height: ${(props) => (props.open ? "90vh" : "100%")};
-  border-radius: 1.5vw;
-  background: var(--light-beige);
-  will-change: transform, opacity;
-
-  @media only screen and (max-width: 600px) {
-    width: ${(props) => (props.open ? "100vw" : "28vw")};
-    height: ${(props) => (props.open ? "50vh" : "30%")};
-    border-radius: 1.5vw;
-    background: var(--light-beige);
-    will-change: transform, opacity;
-  }
-
-  @media only screen and (min-width: 601px) and (max-width: 992px) {
-    width: ${(props) => (props.open ? "100vw" : "23vw")};
-    height: ${(props) => (props.open ? "100vh" : "75%")};
-    border-radius: 1.5vw;
-    background: var(--light-beige);
-    will-change: transform, opacity;
-  }
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
 `;
 
 export const Card = styled.div`
   position: relative;
-  overflow: hidden;
   cursor: pointer;
-  border-radius: 1.5vw;
+  border-radius: 20px;
 
-  transition: transform 0.2s ease-out;
+  transition: transform 1s ease-out;
 
   &:hover {
-    transform: scale(1.05);
-  }
-
-  @media only screen and (min-width: 601px) and (max-width: 992px) {
-    height: 100%;
+    transform: scale(1.15);
   }
 `;
 
 export const CardImage = styled.img`
+  border-radius: 20px;
   width: 100%; //tamanho da imagem dentro do card
   height: auto;
 `;
@@ -98,40 +77,44 @@ export const CardInfo = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(64, 41, 21, 0.7);
+  background-color: rgba(64, 41, 21, 0.75);
+  border-radius: 20px;
+
   color: #fff;
   padding: 1vw;
   &:hover {
     background-color: var(--dark-brown);
-    // color: var(--dark-brown);
   }
 
   @media only screen and (max-width: 600px) {
-    padding: 2vw;
+    padding: 2rem;
   }
 `;
 
 export const CardTitle = styled.h3`
-  margin: 0;
+  font-size: 1.5rem;
 
   @media only screen and (max-width: 600px) {
-    font-size: 0.5rem;
+    font-size: 1rem;
+  }
+  @media only screen and (min-width: 601px) and (max-width: 992px) {
+    font-size: 1.25rem;
   }
 `;
 
 export const CardPrice = styled.p`
-  margin: 0;
+  font-size: 1.25rem;
 
   @media only screen and (max-width: 600px) {
-    font-size: 0.35rem;
+    font-size: 0.75rem;
   }
 `;
 
 export const CardRef = styled.p`
-  margin: 0;
+  font-size: 0.75rem;
 
   @media only screen and (max-width: 600px) {
-    font-size: 0.25rem;
+    font-size: 0.5rem;
   }
 `;
 

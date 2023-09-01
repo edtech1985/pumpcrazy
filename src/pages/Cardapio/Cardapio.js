@@ -5,7 +5,7 @@ export const CardapioContainer = styled.div`
   max-width: 90vw;
   margin: 0 auto;
   padding-top: 1rem;
-  border-radius: 10px; /* Arredonda as bordas externas */
+  border-radius: 10px;
 
   @media (max-width: 600px) {
     padding: 0.5rem;
@@ -32,14 +32,14 @@ export const StyledTHead = styled.thead`
 `;
 
 export const TableHeader = styled.th`
-  background-color: #f8f8f8;
+  background-color: rgba(240, 217, 202, 0.5);
   padding: 0.75rem;
   font-size: 1rem;
 `;
 
 export const TableRow = styled.tr`
   border-bottom: 1px solid #ddd;
-  background-color: var(--salmon);
+  background-color: rgba(240, 217, 202, 0.85);
   &:hover {
     background-color: #f5f5f5;
     cursor: pointer;

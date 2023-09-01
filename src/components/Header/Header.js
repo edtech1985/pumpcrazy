@@ -11,7 +11,7 @@ export const StyledHeader = styled.header`
   max-height: 12vh;
   height: 12vh;
   padding-left: 1.5vw;
-  padding-right: 1.5vw;
+  padding-right: 2.5rem;
   box-sizing: border-box;
 `;
 
@@ -82,6 +82,7 @@ export const StyledCartIcon = styled.div`
 
   @media only screen and (max-width: 600px) {
     font-size: 1rem;
+    margin-right: 1rem;
   }
 
   @media only screen and (min-width: 601px) and (max-width: 992px) {

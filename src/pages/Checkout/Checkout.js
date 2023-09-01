@@ -51,7 +51,7 @@ export const CheckoutTable = styled.table`
   border-collapse: collapse;
   border-radius: 15px;
   margin-top: 20px;
-  background-color: rgba(245, 245, 220, 0.75);
+  background-color: rgba(240, 217, 202, 0.85);
 
   @media only screen and (max-width: 768px) {
     margin-top: 5px;

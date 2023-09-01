@@ -25,7 +25,7 @@ export const Container = styled(animated.div)`
   grid-template-columns: repeat(4, minmax(20%, 1fr));
   grid-gap: 1rem;
   padding: 1rem;
-  padding-right: 2rem;
+  padding-right: 1rem;
   cursor: pointer;
   align-items: center;
   justify-content: space-around;
@@ -34,6 +34,7 @@ export const Container = styled(animated.div)`
 
   @media only screen and (max-width: 480px) {
     grid-template-columns: repeat(1, minmax(100%, 1fr));
+    margin-right: 0rem;
   }
 
   @media only screen and (min-width: 481px) and (max-width: 600px) {

@@ -51,9 +51,9 @@ function Footer() {
         </StyledRightsReserved>
       </StyledDiv>
       <StyledDevelopedBy>
-        Developed by{" "}
+        Desenvolvido por{" "}
         <a
-          href="https://www.edtech1985.com.br/"
+          href="https://www.edtech1985.com.br/projetos/"
           target="_blank"
           rel="noreferrer"
           alt="Desenvolvedor Web edtech1985"

@@ -4,6 +4,7 @@ import styled from "styled-components";
 export const CheckoutContainer = styled.div`
   max-width: 100vw;
   margin: 0 auto;
+  padding-top: 1rem;
 
   @media only screen and (max-width: 768px) {
     margin: 0.25rem;

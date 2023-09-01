@@ -3,11 +3,18 @@ import "./AnimatedButton.css";
 import { CartContext } from "../CartContext";
 import { useContext } from "react";
 
-function AnimatedButton(props) {
-  // Adicione props como parâmetro
+function AnimatedButton() {
   const [isAnimated, setIsAnimated] = useState(false);
 
+  //   const { cartItems, updateCartItemQuantity, removeFromCart } =
   const { cartItems } = useContext(CartContext);
+
+  const getTotalPrice = () => {
+    return cartItems.reduce(
+      (total, item) => total + item.price * item.quantity,
+      0
+    );
+  };
 
   const handleButtonClick = () => {
     if (!isAnimated) {
@@ -16,9 +23,9 @@ function AnimatedButton(props) {
         window.location.href = `https://wa.me/5551993358455?text=${encodeURIComponent(
           `Olá, Pump Crazy Cookies! Escolhi os seguintes itens:\n\n${cartItems
             .map((item) => `${item.quantity} ${item.name}`)
-            .join("\n")}, \n\ntotal R$ ${props.totalWithDelivery.toFixed(
+            .join("\n")}, total R$ ${getTotalPrice().toFixed(
             2
-          )} com entrega para ${props.selectedCity}`
+          )}.\n\nQual o valor da entrega para meu endereço?`
         )}`;
       }, 7500);
     }

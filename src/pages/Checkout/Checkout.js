@@ -12,6 +12,23 @@ export const CheckoutContainer = styled.div`
   }
 `;
 
+export const DivCitySelector = styled.table`
+  width: 100%;
+  border-collapse: collapse;
+  padding: 2rem;
+  line-height: 2rem;
+
+  select {
+    padding: 0.5rem;
+    margin-left: 1rem;
+    border-radius: 15px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    margin-top: 2rem;
+  }
+`;
+
 export const CheckoutTable = styled.table`
   width: 100%;
   border-collapse: collapse;
@@ -117,6 +134,7 @@ export const CheckoutSummary = styled.div`
   @media only screen and (max-width: 768px) {
     font-size: 12px;
     margin: 0 1rem;
+    padding-bottom: 2rem;
   }
 `;
 

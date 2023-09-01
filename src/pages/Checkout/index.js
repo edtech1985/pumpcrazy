@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import {
   CheckoutContainer,
   CheckoutSummary,
@@ -13,6 +13,7 @@ import {
   CheckoutTableHead,
   CheckoutTableRow,
   DivButton,
+  DivCitySelector,
   MinusButton,
   PlusButton,
   QuantityButtons,
@@ -25,6 +26,23 @@ function Checkout() {
   const { cartItems, updateCartItemQuantity, removeFromCart } =
     useContext(CartContext);
 
+  const [selectedCity, setSelectedCity] = useState("Canoas"); // Cidade padrão
+  const [deliveryFee, setDeliveryFee] = useState(7); // Taxa padrão para Canoas
+
+  // Função para obter a taxa de entrega com base na cidade
+  const getDeliveryFee = (city) => {
+    switch (city) {
+      case "Canoas":
+        return 7;
+      case "Porto Alegre":
+        return 20;
+      case "Cachoeirinha":
+        return 15;
+      default:
+        return "Consultar";
+    }
+  };
+
   const getTotalPrice = () => {
     return cartItems.reduce(
       (total, item) => total + item.price * item.quantity,
@@ -32,9 +50,36 @@ function Checkout() {
     );
   };
 
+  // Função para calcular o total incluindo a taxa de entrega
+  const getTotalWithDelivery = () => {
+    const totalWithoutDelivery = getTotalPrice();
+    return (
+      totalWithoutDelivery + (typeof deliveryFee === "number" ? deliveryFee : 0)
+    );
+  };
+
   return (
     <>
       <CheckoutContainer>
+        {/* Exibindo a taxa de entrega com base na cidade selecionada */}
+        <DivCitySelector>
+          Selecione sua cidade:
+          <select
+            onChange={(e) => {
+              setSelectedCity(e.target.value);
+              setDeliveryFee(getDeliveryFee(e.target.value));
+            }}
+          >
+            <option value="Canoas">Canoas</option>
+            <option value="Porto Alegre">Porto Alegre</option>
+            <option value="Cachoeirinha">Cachoeirinha</option>
+          </select>
+          {typeof deliveryFee === "number" && deliveryFee !== "Consultar" && (
+            <div>
+              Taxa de Entrega para {selectedCity}: R$ {deliveryFee.toFixed(2)}
+            </div>
+          )}
+        </DivCitySelector>
         <CheckoutTable>
           <CheckoutTableHead>
             <CheckoutTableDataName>Product</CheckoutTableDataName>
@@ -83,23 +128,32 @@ function Checkout() {
           </tbody>
         </CheckoutTable>
         <CheckoutSummary>
-          <CheckoutSummaryText>Total:</CheckoutSummaryText>
-          <CheckoutSummaryValue>{`R$ ${getTotalPrice().toFixed(
-            2
-          )}`}</CheckoutSummaryValue>
+          <div>
+            <CheckoutSummaryText>Total Cookies:</CheckoutSummaryText>
+            <CheckoutSummaryValue>{`R$ ${getTotalPrice().toFixed(
+              2
+            )}`}</CheckoutSummaryValue>
+          </div>
+          {typeof deliveryFee === "number" && deliveryFee !== "Consultar" && (
+            <div>
+              <CheckoutSummaryText>Taxa de Entrega:</CheckoutSummaryText>
+              <CheckoutSummaryValue>{`R$ ${deliveryFee.toFixed(
+                2
+              )}`}</CheckoutSummaryValue>
+            </div>
+          )}
+          <div>
+            <CheckoutSummaryText>Total com Entrega:</CheckoutSummaryText>
+            <CheckoutSummaryValue>{`R$ ${getTotalWithDelivery().toFixed(
+              2
+            )}`}</CheckoutSummaryValue>
+          </div>
         </CheckoutSummary>
         <DivButton>
-          {/* <a
-            href={`https://wa.me/5551993358455?text=${encodeURIComponent(
-              `Olá, Pump Crazy Cookies! Escolhi os seguintes itens: ${cartItems
-                .map((item) => `${item.quantity} ${item.name}`)
-                .join(", ")}, total R$ ${getTotalPrice().toFixed(2)}`
-            )}. Qual o valor da entrega para meu endereço?`}
-            target="_blank"
-            rel="noopener noreferrer"
-          > */}
-          <AnimatedButton />
-          {/* </a> */}
+          <AnimatedButton
+            selectedCity={selectedCity}
+            totalWithDelivery={getTotalWithDelivery()}
+          />
         </DivButton>
       </CheckoutContainer>
     </>

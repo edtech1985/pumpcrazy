@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import {
   CheckoutContainer,
   CheckoutSummary,
@@ -25,6 +25,23 @@ function Checkout() {
   const { cartItems, updateCartItemQuantity, removeFromCart } =
     useContext(CartContext);
 
+  const [selectedCity, setSelectedCity] = useState("Canoas"); // Cidade padrão
+  const [deliveryFee, setDeliveryFee] = useState(7); // Taxa padrão para Canoas
+
+  // Função para obter a taxa de entrega com base na cidade
+  const getDeliveryFee = (city) => {
+    switch (city) {
+      case "Canoas":
+        return 7;
+      case "Porto Alegre":
+        return 20;
+      case "Cachoeirinha":
+        return 15;
+      default:
+        return "Consultar";
+    }
+  };
+
   const getTotalPrice = () => {
     return cartItems.reduce(
       (total, item) => total + item.price * item.quantity,
@@ -32,9 +49,40 @@ function Checkout() {
     );
   };
 
+  // Função para calcular o total incluindo a taxa de entrega
+  const getTotalWithDelivery = () => {
+    const totalWithoutDelivery = getTotalPrice();
+    return (
+      totalWithoutDelivery + (typeof deliveryFee === "number" ? deliveryFee : 0)
+    );
+  };
+
   return (
     <>
       <CheckoutContainer>
+                {/* Exibindo a taxa de entrega com base na cidade selecionada */}
+                <div>
+          Selecione sua cidade:
+          <select
+            onChange={(e) => {
+              setSelectedCity(e.target.value);
+              setDeliveryFee(getDeliveryFee(e.target.value));
+            }}
+          >
+            <option value="Canoas">Canoas</option>
+            <option value="Porto Alegre">Porto Alegre</option>
+            <option value="Cachoeirinha">Cachoeirinha</option>
+            <option value="Outros">Outros</option>
+          </select>
+          {typeof deliveryFee 
+            <div>
+              Taxa de Entrega para {selectedCity}: R$ {deliveryFee.toFixed(2)}
+            </div>
+          }
+          <div>
+            Total com Taxa de Entrega: R$ {getTotalWithDelivery().toFixed(2)}
+          </div>
+        </div>
         <CheckoutTable>
           <CheckoutTableHead>
             <CheckoutTableDataName>Product</CheckoutTableDataName>
@@ -89,18 +137,9 @@ function Checkout() {
           )}`}</CheckoutSummaryValue>
         </CheckoutSummary>
         <DivButton>
-          {/* <a
-            href={`https://wa.me/5551993358455?text=${encodeURIComponent(
-              `Olá, Pump Crazy Cookies! Escolhi os seguintes itens: ${cartItems
-                .map((item) => `${item.quantity} ${item.name}`)
-                .join(", ")}, total R$ ${getTotalPrice().toFixed(2)}`
-            )}. Qual o valor da entrega para meu endereço?`}
-            target="_blank"
-            rel="noopener noreferrer"
-          > */}
           <AnimatedButton />
-          {/* </a> */}
         </DivButton>
+
       </CheckoutContainer>
     </>
   );

@@ -7,13 +7,13 @@ export const StyledContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 80vh;
-  max-height: 80vh;
+  height: 100%;
+  max-height: 100vh;
   width: 100vw;
   overflow: auto;
 
   @media only screen and (max-width: 600px) {
-    height: 77vh;
+    max-height: 100%;
     width: 100%;
   }
 `;
@@ -40,8 +40,14 @@ export const StyledContent = styled.div`
     height: auto;
   }
 
-  @media only screen and (min-width: 601px) and (max-width: 992px) {
+  @media only screen and (min-width: 601px) and (max-width: 768px) {
     height: auto;
+    padding-top: 40vh;
+  }
+
+  @media only screen and (min-width: 769px) and (max-width: 992px) {
+    height: auto;
+    padding-top: 30vh;
   }
 `;
 

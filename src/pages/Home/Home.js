@@ -8,12 +8,23 @@ export const StyledContainer = styled.div`
   align-items: center;
   justify-content: center;
   height: 100%;
-  max-height: 100vh;
+  min-height: 100vh;
   width: 100vw;
 
   @media only screen and (max-width: 600px) {
-    max-height: 100%;
-    width: 100%;
+    justify-content: start;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    height: auto;
+    min-height: auto;
+  }
+
+  @media only screen and (min-width: 600px) and (max-width: 999px) {
+    justify-content: start;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    height: auto;
+    min-height: auto;
   }
 `;
 
@@ -34,19 +45,16 @@ export const StyledContent = styled.div`
   position: relative;
   z-index: 1;
   height: 100%;
-
   @media only screen and (max-width: 600px) {
     height: auto;
   }
 
-  @media only screen and (min-width: 601px) and (max-width: 768px) {
-    height: auto;
-    padding-top: 40vh;
+  @media only screen and (min-width: 600px) and (max-width: 768px) {
+    height: 100%;
   }
 
-  @media only screen and (min-width: 769px) and (max-width: 992px) {
+  @media only screen and (min-width: 768px) and (max-width: 992px) {
     height: auto;
-    padding-top: 30vh;
   }
 `;
 
@@ -94,4 +102,12 @@ export const StyledP = styled.p`
   @media only screen and (min-width: 601px) and (max-width: 992px) {
     font-size: 1.25rem;
   }
+`;
+
+export const Mask = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 `;

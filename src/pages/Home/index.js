@@ -1,6 +1,12 @@
 import React, { useEffect } from "react";
-import { StyledContainer, StyledContent, StyledH1, StyledP } from "./Home";
-
+import {
+  Mask,
+  StyledContainer,
+  StyledContent,
+  StyledH1,
+  StyledP,
+} from "./Home";
+import Mask1 from "../../img/mask1.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
 

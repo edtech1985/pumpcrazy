@@ -10,13 +10,14 @@ const GlobalStyle = createGlobalStyle`
 
 body {
     max-width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
+    height: 100%;
     display: flex;
     justify-content: center;
     background-color: #F2DCB3;
 
     @media only screen and (max-width: 600px) {
-    height: auto;
+    min-height: 100vh;
     }
 
   @media only screen and (min-width: 601px) and (max-width: 992px) {

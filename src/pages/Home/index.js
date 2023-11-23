@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import {
   Mask,
+  MaskDiv,
   StyledContainer,
   StyledContent,
   StyledH1,
@@ -66,6 +67,9 @@ function Home() {
             - Explosão de sabor e recheio!!
           </StyledP>
         </StyledContent>
+        <MaskDiv>
+          <Mask src={Mask1} alt="Mask1" />
+        </MaskDiv>
       </div>
     </StyledContainer>
   );

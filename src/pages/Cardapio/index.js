@@ -20,7 +20,11 @@ import {
   CartIcon,
   StyledTHead,
   Content,
+  MaskTop,
+  Mask,
 } from "./Cardapio";
+
+import Mask2 from "../../img/mask2.png";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -57,6 +61,9 @@ export default function Cardapio() {
   return (
     <div className="animation" data-aos="fade-up">
       <CardapioContainer>
+        <MaskTop>
+          <Mask src={Mask2} alt="Mascote" />
+        </MaskTop>
         <Content>
           <SearchInputContainer>
             <SearchInput

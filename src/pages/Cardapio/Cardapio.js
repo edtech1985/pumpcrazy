@@ -11,6 +11,42 @@ export const CardapioContainer = styled.section`
   }
 `;
 
+export const MaskTop = styled.div`
+  position: absolute;
+  top: 0;
+  left: 12vw;
+  width: auto;
+  max-height: 20vh;
+  z-index: 999;
+`;
+
+export const Mask = styled.img`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: auto;
+  max-height: 20vh;
+  z-index: 999;
+
+  @media only screen and (max-width: 600px) {
+    max-height: 12vh;
+    top: -2vh;
+    left: 50vw;
+  }
+
+  @media only screen and (min-width: 601px) and (max-width: 992px) {
+    max-height: 16vh;
+    top: 2vh;
+    left: 0;
+  }
+
+  @media only screen and (min-width: 992px) and (max-width: 1200px) {
+    max-height: 22vh;
+    bottom: -7vh;
+    left: 0;
+  }
+`;
+
 export const Content = styled.div`
   display: flex;
   flex-direction: column;

@@ -104,10 +104,38 @@ export const StyledP = styled.p`
   }
 `;
 
-export const Mask = styled.div`
+export const MaskDiv = styled.div`
   position: absolute;
-  top: 0;
+  bottom: -8vh;
+  left: 5vw;
+  width: auto;
+  max-height: 20vh;
+  z-index: 999;
+`;
+
+export const Mask = styled.img`
+  position: absolute;
+  bottom: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: auto;
+  max-height: 20vh;
+  z-index: 999;
+
+  @media only screen and (max-width: 600px) {
+    max-height: 14vh;
+    bottom: -2vh;
+    left: -7vw;
+  }
+
+  @media only screen and (min-width: 600px) and (max-width: 992px) {
+    max-height: 16vh;
+    bottom: -2vh;
+    left: 0;
+  }
+
+  @media only screen and (min-width: 992px) and (max-width: 1200px) {
+    max-height: 22vh;
+    bottom: -7vh;
+    left: 0;
+  }
 `;

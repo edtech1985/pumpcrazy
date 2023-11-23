@@ -19,6 +19,7 @@ import {
   ModalText,
   CartIcon,
   StyledTHead,
+  Content,
 } from "./Cardapio";
 
 import AOS from "aos";
@@ -56,56 +57,58 @@ export default function Cardapio() {
   return (
     <div className="animation" data-aos="fade-up">
       <CardapioContainer>
-        <SearchInputContainer>
-          <SearchInput
-            type="text"
-            placeholder="Pesquisar cookies..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-          <SearchIcon />
-        </SearchInputContainer>
+        <Content>
+          <SearchInputContainer>
+            <SearchInput
+              type="text"
+              placeholder="Pesquisar cookies..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+            <SearchIcon />
+          </SearchInputContainer>
 
-        <Table>
-          <StyledTHead>
-            <tr>
-              <TableHeader>Nome</TableHeader>
-              <TableHeader>Preço</TableHeader>
-              <TableHeader>Add</TableHeader>
-            </tr>
-          </StyledTHead>
-          <tbody>
-            {filteredProducts.map((product) => (
-              <TableRow key={product.id}>
-                <TableCell onClick={() => openModal(product)}>
-                  {product.name}
-                </TableCell>
-                <TableCell>R$ {product.price.toFixed(2)}</TableCell>
-                <TableCell>
-                  <CartIcon onClick={() => addToCart(product)} />
-                </TableCell>
-              </TableRow>
-            ))}
-          </tbody>
-        </Table>
+          <Table>
+            <StyledTHead>
+              <tr>
+                <TableHeader>Nome</TableHeader>
+                <TableHeader>Preço</TableHeader>
+                <TableHeader>Add</TableHeader>
+              </tr>
+            </StyledTHead>
+            <tbody>
+              {filteredProducts.map((product) => (
+                <TableRow key={product.id}>
+                  <TableCell onClick={() => openModal(product)}>
+                    {product.name}
+                  </TableCell>
+                  <TableCell>R$ {product.price.toFixed(2)}</TableCell>
+                  <TableCell>
+                    <CartIcon onClick={() => addToCart(product)} />
+                  </TableCell>
+                </TableRow>
+              ))}
+            </tbody>
+          </Table>
 
-        {selectedProduct && (
-          <ModalOverlay onClick={handleOutsideClick}>
-            <ModalContent>
-              <CloseButton onClick={closeModal}>Fechar</CloseButton>
-              <ModalTitle>{selectedProduct.name}</ModalTitle>
-              <ProductImage
-                src={selectedProduct.image_url}
-                alt={selectedProduct.name}
-              />
-              <ModalText>{selectedProduct.description}</ModalText>
-              <ModalText>
-                Preço: R$ {selectedProduct.price.toFixed(2)}
-              </ModalText>
-              <CartIcon onClick={() => addToCart(selectedProduct)} />
-            </ModalContent>
-          </ModalOverlay>
-        )}
+          {selectedProduct && (
+            <ModalOverlay onClick={handleOutsideClick}>
+              <ModalContent>
+                <CloseButton onClick={closeModal}>Fechar</CloseButton>
+                <ModalTitle>{selectedProduct.name}</ModalTitle>
+                <ProductImage
+                  src={selectedProduct.image_url}
+                  alt={selectedProduct.name}
+                />
+                <ModalText>{selectedProduct.description}</ModalText>
+                <ModalText>
+                  Preço: R$ {selectedProduct.price.toFixed(2)}
+                </ModalText>
+                <CartIcon onClick={() => addToCart(selectedProduct)} />
+              </ModalContent>
+            </ModalOverlay>
+          )}
+        </Content>
       </CardapioContainer>
     </div>
   );

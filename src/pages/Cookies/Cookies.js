@@ -96,7 +96,7 @@ export const CardTitle = styled.h3`
   font-size: 1.5rem;
 
   @media only screen and (max-width: 600px) {
-    font-size: 1rem;
+    font-size: 1.75rem;
   }
   @media only screen and (min-width: 601px) and (max-width: 992px) {
     font-size: 1.25rem;
@@ -107,7 +107,7 @@ export const CardPrice = styled.p`
   font-size: 1.25rem;
 
   @media only screen and (max-width: 600px) {
-    font-size: 0.75rem;
+    font-size: 1.25rem;
   }
 `;
 
@@ -136,10 +136,10 @@ export const CardCartButton = styled.div`
   }
 
   @media only screen and (max-width: 600px) {
-    font-size: 1rem;
-    padding: 0.2rem;
-    padding-top: 0.25rem;
-    margin: 0.25rem;
+    font-size: 1.5rem;
+    padding: 0.6rem;
+    padding-top: 0.7rem;
+    margin: 0.5rem;
   }
 `;
 

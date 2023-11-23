@@ -26,7 +26,7 @@ export default function App() {
   useEffect(() => {
     AOS.init({ duration: 3000 });
   }, []);
-  const [selectedCookie, setSelectedCookie] = useState(null);
+  const [setSelectedCookie] = useState(null);
 
   const { addToCart } = useContext(CartContext);
 

@@ -1,14 +1,26 @@
 import styled from "styled-components";
 import { FaSearch, FaShoppingCart } from "react-icons/fa";
 
-export const CardapioContainer = styled.div`
-  max-width: 90vw;
-  margin: 0 auto;
+export const CardapioContainer = styled.section`
+  width: 100vw;
   padding-top: 1rem;
   border-radius: 10px;
 
   @media (max-width: 600px) {
-    padding: 0.5rem;
+    width: 100%;
+  }
+`;
+
+export const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 5vw;
+  padding-right: 5vw;
+
+  @media (max-width: 600px) {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 `;
 
@@ -59,6 +71,7 @@ export const SearchInputContainer = styled.div`
   border: 1px solid #ddd;
   border-radius: 10px;
   padding: 5px;
+  width: 50%;
   background-color: white;
   box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.5);
   position: static;
@@ -66,12 +79,13 @@ export const SearchInputContainer = styled.div`
 
   @media (max-width: 600px) {
     margin: 0;
-    border-radius: 0;
+    width: 90%;
   }
 `;
 
 export const SearchInput = styled.input`
   padding: 10px;
+
   flex: 1;
 `;
 

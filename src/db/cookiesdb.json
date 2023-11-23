@@ -20,23 +20,23 @@
             "id": 3,
             "reference": "C003",
             "name": "Stikadinho",
-            "description": "Massa tradicional branca , com gotas de chocolate ao leite, recheio e cobertura de Stikadinho",
+            "description": "Massa tradicional branca, com gotas de chocolate ao leite, recheio e cobertura de Stikadinho",
             "price": 25.00,
             "image_url": "https://github.com/edtech1985/pumpCrazyCookies/blob/main/img/stikadinho.jpg?raw=true"
         },
         {
             "id": 4,
             "reference": "C004",
-            "name": "Ouro Branco",
-            "description": "Massa tradicional branca com gotas nobres de chocolate branco, recheio e cobertura de Ouro Branco",
+            "name": "Nutella DUO",
+            "description": "Massa meio a meio, dark e tradicional branca, com gotas de chocolate nobre branca e preta ao  leite, recheio de Nutella e creme de avelã branco",
             "price": 25.00,
-            "image_url": "https://github.com/edtech1985/pumpCrazyCookies/blob/main/img/ourobranco.jpg?raw=true"
+            "image_url": "https://github.com/edtech1985/pumpCrazyCookies/blob/main/img/duo.jpeg?raw=true"
         },
         {
             "id": 5,
             "reference": "C005",
             "name": "KitKat",
-            "description": "Massa tradicional branca com gotas de chocolate ao leite , recheio e cobertura de KitKat",
+            "description": "Massa tradicional branca com gotas de chocolate ao leite, recheio e cobertura de KitKat",
             "price": 25.00,
             "image_url": "https://github.com/edtech1985/pumpCrazyCookies/blob/main/img/kitkat.jpeg?raw=true"
         },
@@ -77,7 +77,7 @@
             "reference": "C010",
             "name": "Kinder Bueno",
             "description": "Cookie com recheio irresistível de Kinder Bueno",
-            "price": 25.00,
+            "price": 27.00,
             "image_url": "https://github.com/edtech1985/pumpCrazyCookies/blob/main/img/kinderbueno.jpg?raw=true"
         },
         {
@@ -87,6 +87,30 @@
             "description": "Massa tradicional branca, com gotas nobres de chocolate ao leite, recheio e cobertura de chocolate Alpino",
             "price": 25.00,
             "image_url": "https://github.com/edtech1985/pumpCrazyCookies/blob/main/img/alpino.jpg?raw=true"
+        },
+        {
+            "id": 13,
+            "reference": "C013",
+            "name": "Prestígio",
+            "description": "Massa dark chocolate, com cacau 100%, coco ralado, com gotas de chocolate nobre meio amargo e recheio de brigadeiro de beijinho",
+            "price": 25.00,
+            "image_url": "https://github.com/edtech1985/pumpCrazyCookies/blob/main/img/prestigio.jpeg?raw=true"
+        },
+        {
+            "id": 14,
+            "reference": "C014",
+            "name": "Paçoca Caramelo",
+            "description": "Massa tradicional branca de baunilha, com gotas nobre de chocolate branco, recheio de brigadeiro de paçoca com cream chease e caramelo",
+            "price": 25.00,
+            "image_url": "https://github.com/edtech1985/pumpCrazyCookies/blob/main/img/pacoca.jpeg?raw=true"
+        },
+        {
+            "id": 15,
+            "reference": "C015",
+            "name": "Banoffee",
+            "description": "Massa tradicional branca de baunilha, gotas de chocolate nobre branco, canela em pó, recheio de brigadeiro de banana com cream chease e doce de leite uruguaio 🇺🇾",
+            "price": 25.00,
+            "image_url": "https://github.com/edtech1985/pumpCrazyCookies/blob/main/img/banofee.jpeg?raw=true"
         }
     ]
 }

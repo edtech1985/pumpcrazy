@@ -7,22 +7,31 @@ export const StyledHeader = styled.header`
   padding: 1vw;
   background-color: var(--dark-brown);
   box-shadow: 2px 4px 2px rgba(0, 0, 0, 0.5);
-  width: 100vw;
+  max-width: 100vw;
   max-height: 12vh;
   height: 12vh;
   padding-left: 1.5vw;
-  padding-right: 2.5rem;
+  padding-right: 0.5rem;
   box-sizing: border-box;
+
+  @media only screen and (max-width: 600px) {
+    width: 100vw;
+  }
 `;
 
 export const StyledLogo = styled.img`
-  width: 10vh;
+  width: auto;
   height: 10vh;
+
+  @media only screen and (max-width: 600px) {
+    height: 8vh;
+    padding: 0.5rem;
+  }
 `;
 
 export const StyledNavbar = styled.nav`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 `;
 
@@ -31,7 +40,7 @@ export const StyledNavItem = styled.a`
   padding: 1vw;
   color: #fff;
   text-decoration: none;
-  font-size: 2vw;
+  font-size: 2rem;
   &:hover {
     color: var(--light-beige);
     border-radius: 10px;
@@ -41,7 +50,7 @@ export const StyledNavItem = styled.a`
     font-size: 1rem;
   }
 
-  @media only screen and (min-width: 601px) and (max-width: 992px) {
+  @media only screen and (min-width: 600px) and (max-width: 992px) {
     font-size: 2rem;
     padding: 2vw;
   }
@@ -81,8 +90,7 @@ export const StyledCartIcon = styled.div`
   }
 
   @media only screen and (max-width: 600px) {
-    font-size: 1rem;
-    margin-right: 1rem;
+    font-size: 1.2rem;
   }
 
   @media only screen and (min-width: 601px) and (max-width: 992px) {
@@ -103,7 +111,7 @@ export const StyledCartCount = styled.div`
   }
 
   @media only screen and (max-width: 600px) {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 
   @media only screen and (min-width: 601px) and (max-width: 992px) {

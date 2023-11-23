@@ -10,7 +10,6 @@ export const StyledContainer = styled.div`
   height: 100%;
   max-height: 100vh;
   width: 100vw;
-  overflow: auto;
 
   @media only screen and (max-width: 600px) {
     max-height: 100%;

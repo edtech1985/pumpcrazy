@@ -284,3 +284,38 @@ export const RemoveButton = styled.button`
     margin: 0 2px;
   }
 `;
+
+export const MaskDiv = styled.div`
+  position: absolute;
+  bottom: 50px;
+  left: 125px;
+  width: auto;
+  max-height: 30vh;
+  height: 30vh;
+  z-index: 999;
+`;
+
+export const Mask = styled.img`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: auto;
+  height: 30vh;
+  z-index: 999;
+
+  @media only screen and (max-width: 600px) {
+    max-height: 15vh;
+    bottom: 17px;
+    left: -80px;
+  }
+
+  @media only screen and (min-width: 600px) and (max-width: 992px) {
+    max-height: 16vh;
+    left: -10vw;
+  }
+
+  @media only screen and (min-width: 992px) and (max-width: 1200px) {
+    max-height: 25vh;
+    bottom: -7vh;
+  }
+`;

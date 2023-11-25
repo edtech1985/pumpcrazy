@@ -15,6 +15,8 @@ import {
   CheckoutTableRow,
   DivButton,
   DivCitySelector,
+  Mask,
+  MaskDiv,
   MinusButton,
   PlusButton,
   QuantityButtons,
@@ -23,6 +25,7 @@ import {
 } from "./Checkout";
 import { CartContext } from "../../components/CartContext";
 import AnimatedButton from "../../components/AnimatedButton/AnimatedButton";
+import Mask1 from "../../img/mask3.png";
 
 function Checkout() {
   const { cartItems, updateCartItemQuantity, removeFromCart } =
@@ -159,6 +162,9 @@ function Checkout() {
             />
           </DivButton>
         </CheckouContent>
+        <MaskDiv>
+          <Mask src={Mask1} alt="Mask1" />
+        </MaskDiv>
       </CheckoutContainer>
     </>
   );

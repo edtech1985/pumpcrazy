@@ -18,8 +18,15 @@ export const StyledContainer = styled.div`
 
   @media only screen and (min-width: 600px) and (max-width: 999px) {
     justify-content: start;
-    padding-top: 5vh;
-    padding-bottom: 5vh;
+    padding-top: 30px;
+    padding-bottom: 60px;
+    height: auto;
+    min-height: auto;
+  }
+  @media only screen and (min-width: 999px) {
+    justify-content: start;
+    padding-top: 10px;
+    padding-bottom: 40px;
     height: auto;
     min-height: auto;
   }
@@ -43,11 +50,11 @@ export const StyledContent = styled.div`
   z-index: 1;
   height: 100%;
 
-  @media only screen and (max-width: 420px) {
+  @media only screen and (max-width: 430px) {
     padding-bottom: 50px;
   }
 
-  @media only screen and (min-width: 420px) and (max-width: 600px) {
+  @media only screen and (min-width: 430px) and (max-width: 600px) {
     height: auto;
   }
 
@@ -121,19 +128,19 @@ export const Mask = styled.img`
   bottom: 0;
   left: 0;
   width: auto;
-  max-height: 20vh;
+  max-height: 30px;
   z-index: 999;
 
-  @media only screen and (max-width: 400px) {
-    max-height: 100px;
+  @media only screen and (max-width: 430px) {
+    max-height: 110px;
     bottom: 15px;
     left: -30px;
   }
 
-  @media only screen and (min-width: 400px) and (max-width: 600px) {
-    max-height: 16vh;
-    bottom: -7vh;
-    left: -7vw;
+  @media only screen and (min-width: 430px) and (max-width: 600px) {
+    max-height: 150px;
+    bottom: -120px;
+    left: -40px;
   }
 
   @media only screen and (min-width: 600px) and (max-width: 992px) {

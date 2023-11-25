@@ -43,11 +43,11 @@ export const StyledContent = styled.div`
   z-index: 1;
   height: 100%;
 
-  @media only screen and (max-width: 400px) {
+  @media only screen and (max-width: 420px) {
     padding-bottom: 50px;
   }
 
-  @media only screen and (min-width: 400px) and (max-width: 600px) {
+  @media only screen and (min-width: 420px) and (max-width: 600px) {
     height: auto;
   }
 

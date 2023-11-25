@@ -42,7 +42,12 @@ export const StyledContent = styled.div`
   position: relative;
   z-index: 1;
   height: 100%;
-  @media only screen and (max-width: 600px) {
+
+  @media only screen and (max-width: 400px) {
+    padding-bottom: 50px;
+  }
+
+  @media only screen and (min-width: 400px) and (max-width: 600px) {
     height: auto;
   }
 
@@ -119,7 +124,13 @@ export const Mask = styled.img`
   max-height: 20vh;
   z-index: 999;
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 400px) {
+    max-height: 100px;
+    bottom: 15px;
+    left: -30px;
+  }
+
+  @media only screen and (min-width: 400px) and (max-width: 600px) {
     max-height: 16vh;
     bottom: -7vh;
     left: -7vw;

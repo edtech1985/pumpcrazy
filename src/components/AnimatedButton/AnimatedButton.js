@@ -4,7 +4,6 @@ import { CartContext } from "../CartContext";
 import { useContext } from "react";
 
 function AnimatedButton(props) {
-  // Adicione props como parâmetro
   const [isAnimated, setIsAnimated] = useState(false);
 
   const { cartItems } = useContext(CartContext);

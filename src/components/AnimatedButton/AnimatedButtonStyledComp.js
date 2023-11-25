@@ -1,6 +1,5 @@
 import React, { useState, useContext } from "react";
 import styled, { keyframes } from "styled-components";
-import { FaShoppingCart } from "react-icons/fa";
 import { CartContext } from "../CartContext";
 
 // Keyframes para a animação do caminhão

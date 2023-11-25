@@ -4,15 +4,18 @@ import styled from "styled-components";
 import backgroundImage from "./backgroundImage";
 
 export const CheckoutContainer = styled.div`
-  max-width: 100vw;
-  margin: 0 auto;
+  width: 100vw;
   padding-top: 1rem;
 
   @media only screen and (max-width: 768px) {
-    margin: 0.25rem;
-    height: 76vh;
     max-width: 100vw;
   }
+`;
+
+export const CheckouContent = styled.div`
+  max-width: 90vw;
+  justify-content: space-around;
+  margin: 0 auto;
 `;
 
 export const StyledBackground = styled.div`

@@ -15,7 +15,6 @@ export default function AppRouter() {
       <Router>
         <CartProvider>
           <Header />
-
           <StyledBackground />
           <Routes>
             <Route path="/" element={<Home />} />

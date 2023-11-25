@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import {
+  CheckouContent,
   CheckoutContainer,
   CheckoutSummary,
   CheckoutSummaryText,
@@ -62,100 +63,102 @@ function Checkout() {
   return (
     <>
       <CheckoutContainer>
-        <StyledBackground />
-        <DivCitySelector>
-          Selecione sua cidade:
-          <select
-            onChange={(e) => {
-              setSelectedCity(e.target.value);
-              setDeliveryFee(getDeliveryFee(e.target.value));
-            }}
-          >
-            <option value="Canoas">Canoas</option>
-            <option value="Porto Alegre">Porto Alegre</option>
-            <option value="Cachoeirinha">Cachoeirinha</option>
-          </select>
-          {typeof deliveryFee === "number" && deliveryFee !== "Consultar" && (
+        <CheckouContent>
+          <StyledBackground />
+          <DivCitySelector>
+            Selecione sua cidade:
+            <select
+              onChange={(e) => {
+                setSelectedCity(e.target.value);
+                setDeliveryFee(getDeliveryFee(e.target.value));
+              }}
+            >
+              <option value="Canoas">Canoas</option>
+              <option value="Porto Alegre">Porto Alegre</option>
+              <option value="Cachoeirinha">Cachoeirinha</option>
+            </select>
+            {typeof deliveryFee === "number" && deliveryFee !== "Consultar" && (
+              <div>
+                Taxa de Entrega para {selectedCity}: R$ {deliveryFee.toFixed(2)}
+              </div>
+            )}
+          </DivCitySelector>
+          <CheckoutTable>
+            <CheckoutTableHead>
+              <CheckoutTableDataName>Product</CheckoutTableDataName>
+              <CheckoutTableDataPrice>Price</CheckoutTableDataPrice>
+              <CheckoutTableDataQuantity>Quantity</CheckoutTableDataQuantity>
+              <CheckoutTableData>Total</CheckoutTableData>
+              <CheckoutTableData>Actions</CheckoutTableData>
+            </CheckoutTableHead>
+            <tbody>
+              {cartItems.map((item) => (
+                <CheckoutTableRow key={item.id}>
+                  <CheckoutTableDataName>{item.name}</CheckoutTableDataName>
+                  <CheckoutTableDataPrice>{`R$ ${item.price.toFixed(
+                    2
+                  )}`}</CheckoutTableDataPrice>
+                  <CheckoutTableDataQuantity>
+                    <QuantityButtons>
+                      <MinusButton
+                        onClick={() =>
+                          updateCartItemQuantity(item.id, item.quantity - 1)
+                        }
+                        disabled={item.quantity === 1}
+                      >
+                        -
+                      </MinusButton>
+                      <CheckoutTableDataQuantity>
+                        {item.quantity}
+                      </CheckoutTableDataQuantity>
+                      <PlusButton
+                        onClick={() =>
+                          updateCartItemQuantity(item.id, item.quantity + 1)
+                        }
+                      >
+                        +
+                      </PlusButton>
+                    </QuantityButtons>
+                  </CheckoutTableDataQuantity>
+                  <CheckoutTableData>{`R$ ${(
+                    item.price * item.quantity
+                  ).toFixed(2)}`}</CheckoutTableData>
+                  <CheckoutTableDataActions>
+                    <TrashIcon onClick={() => removeFromCart(item.id)} />
+                  </CheckoutTableDataActions>
+                </CheckoutTableRow>
+              ))}
+            </tbody>
+          </CheckoutTable>
+          <CheckoutSummary>
             <div>
-              Taxa de Entrega para {selectedCity}: R$ {deliveryFee.toFixed(2)}
-            </div>
-          )}
-        </DivCitySelector>
-        <CheckoutTable>
-          <CheckoutTableHead>
-            <CheckoutTableDataName>Product</CheckoutTableDataName>
-            <CheckoutTableDataPrice>Price</CheckoutTableDataPrice>
-            <CheckoutTableDataQuantity>Quantity</CheckoutTableDataQuantity>
-            <CheckoutTableData>Total</CheckoutTableData>
-            <CheckoutTableData>Actions</CheckoutTableData>
-          </CheckoutTableHead>
-          <tbody>
-            {cartItems.map((item) => (
-              <CheckoutTableRow key={item.id}>
-                <CheckoutTableDataName>{item.name}</CheckoutTableDataName>
-                <CheckoutTableDataPrice>{`R$ ${item.price.toFixed(
-                  2
-                )}`}</CheckoutTableDataPrice>
-                <CheckoutTableDataQuantity>
-                  <QuantityButtons>
-                    <MinusButton
-                      onClick={() =>
-                        updateCartItemQuantity(item.id, item.quantity - 1)
-                      }
-                      disabled={item.quantity === 1}
-                    >
-                      -
-                    </MinusButton>
-                    <CheckoutTableDataQuantity>
-                      {item.quantity}
-                    </CheckoutTableDataQuantity>
-                    <PlusButton
-                      onClick={() =>
-                        updateCartItemQuantity(item.id, item.quantity + 1)
-                      }
-                    >
-                      +
-                    </PlusButton>
-                  </QuantityButtons>
-                </CheckoutTableDataQuantity>
-                <CheckoutTableData>{`R$ ${(item.price * item.quantity).toFixed(
-                  2
-                )}`}</CheckoutTableData>
-                <CheckoutTableDataActions>
-                  <TrashIcon onClick={() => removeFromCart(item.id)} />
-                </CheckoutTableDataActions>
-              </CheckoutTableRow>
-            ))}
-          </tbody>
-        </CheckoutTable>
-        <CheckoutSummary>
-          <div>
-            <CheckoutSummaryText>Total Cookies:</CheckoutSummaryText>
-            <CheckoutSummaryValue>{`R$ ${getTotalPrice().toFixed(
-              2
-            )}`}</CheckoutSummaryValue>
-          </div>
-          {typeof deliveryFee === "number" && deliveryFee !== "Consultar" && (
-            <div>
-              <CheckoutSummaryText>Taxa de Entrega:</CheckoutSummaryText>
-              <CheckoutSummaryValue>{`R$ ${deliveryFee.toFixed(
+              <CheckoutSummaryText>Total Cookies:</CheckoutSummaryText>
+              <CheckoutSummaryValue>{`R$ ${getTotalPrice().toFixed(
                 2
               )}`}</CheckoutSummaryValue>
             </div>
-          )}
-          <div>
-            <CheckoutSummaryText>Total com Entrega:</CheckoutSummaryText>
-            <CheckoutSummaryValue>{`R$ ${getTotalWithDelivery().toFixed(
-              2
-            )}`}</CheckoutSummaryValue>
-          </div>
-        </CheckoutSummary>
-        <DivButton>
-          <AnimatedButton
-            selectedCity={selectedCity}
-            totalWithDelivery={getTotalWithDelivery()}
-          />
-        </DivButton>
+            {typeof deliveryFee === "number" && deliveryFee !== "Consultar" && (
+              <div>
+                <CheckoutSummaryText>Taxa de Entrega:</CheckoutSummaryText>
+                <CheckoutSummaryValue>{`R$ ${deliveryFee.toFixed(
+                  2
+                )}`}</CheckoutSummaryValue>
+              </div>
+            )}
+            <div>
+              <CheckoutSummaryText>Total com Entrega:</CheckoutSummaryText>
+              <CheckoutSummaryValue>{`R$ ${getTotalWithDelivery().toFixed(
+                2
+              )}`}</CheckoutSummaryValue>
+            </div>
+          </CheckoutSummary>
+          <DivButton>
+            <AnimatedButton
+              selectedCity={selectedCity}
+              totalWithDelivery={getTotalWithDelivery()}
+            />
+          </DivButton>
+        </CheckouContent>
       </CheckoutContainer>
     </>
   );

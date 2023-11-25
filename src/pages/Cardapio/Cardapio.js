@@ -29,15 +29,15 @@ export const Mask = styled.img`
   z-index: 999;
 
   @media only screen and (max-width: 600px) {
-    max-height: 12vh;
-    top: -2vh;
-    left: 50vw;
+    max-height: 14vh;
+    top: -3vh;
+    left: 47vw;
   }
 
   @media only screen and (min-width: 601px) and (max-width: 992px) {
-    max-height: 16vh;
-    top: 2vh;
-    left: 0;
+    max-height: 18vh;
+    top: -7vh;
+    left: -10vw;
   }
 
   @media only screen and (min-width: 992px) and (max-width: 1200px) {

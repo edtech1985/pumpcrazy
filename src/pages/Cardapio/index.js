@@ -31,7 +31,7 @@ import "aos/dist/aos.css";
 
 export default function Cardapio() {
   useEffect(() => {
-    AOS.init({ duration: 3000 });
+    AOS.init({ duration: 1000 });
   }, []);
 
   const [searchTerm, setSearchTerm] = useState("");
